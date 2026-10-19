@@ -7,16 +7,22 @@
   <title>Pooters Buffet · A fictional buffet</title>
   <style>
     /* CUSTOMIZE: Change these colors to make the restaurant your own. */
-    :root { --paper:#fff5df; --red:#bb302c; --ink:#39211d; --soft:#f3dfbb; --green:#446448; --line:#d7b99d; }
+    :root { --paper:#e6dcbc; --red:#86391c; --ink:#2b261d; --soft:#d3c79f; --green:#5b6438; --line:#a8996c; }
     * { box-sizing:border-box; }
     html { scroll-padding-top:1rem; }
-    body { margin:0; background:var(--paper); color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
+    body { margin:0; background-color:var(--paper);
+      /* Grime: water stains and nicotine blotches */
+      background-image:radial-gradient(ellipse 340px 220px at 88% 6%, rgba(122,96,48,.20), rgba(122,96,48,.07) 60%, transparent 72%),
+        radial-gradient(ellipse 260px 300px at 6% 42%, rgba(96,104,56,.16), transparent 70%),
+        radial-gradient(circle 180px at 70% 58%, rgba(122,96,48,.14), rgba(122,96,48,.04) 55%, transparent 66%),
+        radial-gradient(ellipse 420px 160px at 30% 92%, rgba(80,64,40,.15), transparent 70%);
+      background-attachment:fixed; color:var(--ink); font-family:Arial,Helvetica,sans-serif; }
     a { color:inherit; text-underline-offset:.22em; }
     a:focus-visible { outline:3px solid var(--green); outline-offset:5px; }
     .skip { position:absolute; z-index:10; top:.75rem; left:1rem; padding:.8rem 1rem; background:var(--ink); color:var(--paper); transform:translateY(-180%); }
     .skip:focus { transform:translateY(0); }
     .wrap { width:min(1180px,100% - 3rem); margin-inline:auto; }
-    header { border-top:8px solid var(--red); }
+    header { border-top:8px solid var(--red); border-image:repeating-linear-gradient(90deg,var(--red) 0 140px,#6e2f17 140px 175px,var(--red) 175px 320px,#9a5a33 320px 340px) 8; }
     .header-row { min-height:100px; display:flex; justify-content:space-between; align-items:center; gap:1.5rem; border-bottom:1px solid var(--red); }
     .brand { color:var(--red); text-decoration:none; font-family:Georgia,'Times New Roman',serif; font-size:1.5rem; font-weight:bold; line-height:.95; letter-spacing:-.05em; }
     .brand span { display:block; }
@@ -42,7 +48,7 @@
     .dish-number { color:var(--red); font-size:.75rem; font-weight:bold; }
     h3 { margin:.8rem 0 .65rem; font:normal 1.6rem/1.1 Georgia,'Times New Roman',serif; letter-spacing:-.03em; }
     .dish p { margin:0; max-width:20rem; font-size:.92rem; line-height:1.7; }
-    .story { background:var(--red); color:var(--paper); padding-block:3.6rem; }
+    .story { background:var(--red) radial-gradient(ellipse 500px 260px at 15% 80%, rgba(0,0,0,.22), transparent 70%); color:var(--paper); padding-block:3.6rem; }
     .story-grid { display:grid; grid-template-columns:.75fr 1.25fr; align-items:start; gap:4rem; }
     .story .eyebrow { margin-top:.4rem; }
     .story h2 { color:var(--paper); max-width:40rem; }
@@ -89,25 +95,25 @@
         <svg class="bowl-art" viewBox="0 0 550 490" role="img" aria-labelledby="bowl-title bowl-desc">
           <title id="bowl-title">A generous bowl of noodles</title>
           <desc id="bowl-desc">An original illustration of a red bowl with curling yellow noodles, green leaves, a soft egg, and two chopsticks.</desc>
-          <circle cx="276" cy="228" r="203" fill="#f3dfbb"/>
-          <path d="M98 86l10-20 10 20 20 10-20 10-10 20-10-20-20-10zM432 174l7-14 7 14 14 7-14 7-7 14-7-14-14-7z" fill="#bb302c"/>
-          <path d="M214 122c-28-27 25-36 0-62M265 128c-28-28 24-42 0-68M311 126c-24-25 20-33 1-57" fill="none" stroke="#bb302c" stroke-width="4" stroke-linecap="round"/>
-          <ellipse cx="277" cy="420" rx="141" ry="12" fill="#d7b99d"/>
-          <path d="M90 245c13 112 80 172 187 172s174-60 187-172z" fill="#bb302c"/>
-          <ellipse cx="277" cy="245" rx="188" ry="76" fill="#39211d" stroke="#bb302c" stroke-width="12"/>
-          <ellipse cx="277" cy="247" rx="166" ry="57" fill="#c98b48"/>
-          <g fill="none" stroke="#ffda83" stroke-width="8" stroke-linecap="round">
+          <circle cx="276" cy="228" r="203" fill="#d3c79f"/>
+          <path d="M98 86l10-20 10 20 20 10-20 10-10 20-10-20-20-10zM432 174l7-14 7 14 14 7-14 7-7 14-7-14-14-7z" fill="#86391c"/>
+          <path d="M214 122c-28-27 25-36 0-62M265 128c-28-28 24-42 0-68M311 126c-24-25 20-33 1-57" fill="none" stroke="#86391c" stroke-width="4" stroke-linecap="round"/>
+          <ellipse cx="277" cy="420" rx="141" ry="12" fill="#a8996c"/>
+          <path d="M90 245c13 112 80 172 187 172s174-60 187-172z" fill="#86391c"/>
+          <ellipse cx="277" cy="245" rx="188" ry="76" fill="#2b261d" stroke="#86391c" stroke-width="12"/>
+          <ellipse cx="277" cy="247" rx="166" ry="57" fill="#9c7140"/>
+          <g fill="none" stroke="#d9c278" stroke-width="8" stroke-linecap="round">
             <path d="M161 237c-19-36 72-53 78-17s-82 39-57 61 77-8 62-26 12-40 40-18"/>
             <path d="M234 213c14-30 76-17 66 8s-78 17-59 43 68 23 66-2 26-42 51-21"/>
             <path d="M178 213c39-29 18 34 58 26s71-13 90 11-13 38-43 26"/>
           </g>
-          <path d="M142 219c-32-3-40-35-36-49 30-3 54 11 55 36M157 212c-8-27 5-52 29-60 21 32 8 59-29 60M171 220c15-36 46-46 65-38-3 34-29 51-65 38" fill="#446448"/>
-          <g transform="rotate(22 355 216)"><ellipse cx="355" cy="216" rx="46" ry="54" fill="#fff5df"/><ellipse cx="355" cy="221" rx="23" ry="27" fill="#efa838"/></g>
-          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#39211d" stroke-width="10" stroke-linecap="round"/>
-          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#6d4433" stroke-width="4" stroke-linecap="round"/>
-          <path d="M114 307c94 48 236 48 327 0" fill="none" stroke="#fff5df" stroke-width="4"/>
-          <path d="M245 371c-15-25 12-55 38-39-14 0-19 21-4 30-11 10-25 12-34 9z" fill="#fff5df"/>
-          <circle cx="312" cy="345" r="5" fill="#fff5df"/>
+          <path d="M142 219c-32-3-40-35-36-49 30-3 54 11 55 36M157 212c-8-27 5-52 29-60 21 32 8 59-29 60M171 220c15-36 46-46 65-38-3 34-29 51-65 38" fill="#5b6438"/>
+          <g transform="rotate(22 355 216)"><ellipse cx="355" cy="216" rx="46" ry="54" fill="#e6dcbc"/><ellipse cx="355" cy="221" rx="23" ry="27" fill="#c8932f"/></g>
+          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#2b261d" stroke-width="10" stroke-linecap="round"/>
+          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#5a4330" stroke-width="4" stroke-linecap="round"/>
+          <path d="M114 307c94 48 236 48 327 0" fill="none" stroke="#e6dcbc" stroke-width="4"/>
+          <path d="M245 371c-15-25 12-55 38-39-14 0-19 21-4 30-11 10-25 12-34 9z" fill="#e6dcbc"/>
+          <circle cx="312" cy="345" r="5" fill="#e6dcbc"/>
         </svg>
         <figcaption>Refills guaranteed. Repairs are not.</figcaption>
       </figure>
