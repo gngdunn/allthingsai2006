@@ -70,6 +70,11 @@
       .story-grid { grid-template-columns:1fr; gap:.5rem; }
     }
     @media (max-width:400px) { .wrap { width:calc(100% - 2rem); } nav { gap:1rem; font-size:.8rem; } .brand { font-size:1.3rem; } }
+    .drop { animation:drip 2.4s ease-in infinite; }
+    .d2 { animation-delay:1.2s; } .d3 { animation-delay:.6s; animation-duration:3s; }
+    @keyframes drip { 0% { transform:translateY(-10px); opacity:0; } 15% { opacity:1; } 85% { opacity:1; } 100% { transform:translateY(70px); opacity:0; } }
+    .ripple { transform-origin:292px 272px; animation:ripple 1.2s ease-out infinite; }
+    @keyframes ripple { from { transform:scale(.4); opacity:1; } to { transform:scale(1.6); opacity:0; } }
     @media (prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } }
   </style>
 </head>
@@ -93,27 +98,50 @@
       </div>
       <figure>
         <svg class="bowl-art" viewBox="0 0 550 490" role="img" aria-labelledby="bowl-title bowl-desc">
-          <title id="bowl-title">A generous bowl of noodles</title>
-          <desc id="bowl-desc">An original illustration of a red bowl with curling yellow noodles, green leaves, a soft egg, and two chopsticks.</desc>
-          <circle cx="276" cy="228" r="203" fill="#d3c79f"/>
-          <path d="M98 86l10-20 10 20 20 10-20 10-10 20-10-20-20-10zM432 174l7-14 7 14 14 7-14 7-7 14-7-14-14-7z" fill="#86391c"/>
-          <path d="M214 122c-28-27 25-36 0-62M265 128c-28-28 24-42 0-68M311 126c-24-25 20-33 1-57" fill="none" stroke="#86391c" stroke-width="4" stroke-linecap="round"/>
-          <ellipse cx="277" cy="420" rx="141" ry="12" fill="#a8996c"/>
-          <path d="M90 245c13 112 80 172 187 172s174-60 187-172z" fill="#86391c"/>
-          <ellipse cx="277" cy="245" rx="188" ry="76" fill="#2b261d" stroke="#86391c" stroke-width="12"/>
-          <ellipse cx="277" cy="247" rx="166" ry="57" fill="#9c7140"/>
-          <g fill="none" stroke="#d9c278" stroke-width="8" stroke-linecap="round">
-            <path d="M161 237c-19-36 72-53 78-17s-82 39-57 61 77-8 62-26 12-40 40-18"/>
-            <path d="M234 213c14-30 76-17 66 8s-78 17-59 43 68 23 66-2 26-42 51-21"/>
-            <path d="M178 213c39-29 18 34 58 26s71-13 90 11-13 38-43 26"/>
+          <title id="bowl-title">A buffet under a leaky ceiling</title>
+          <desc id="bowl-desc">An original illustration of a grimy buffet counter. Water drips from a stained, cracked ceiling into a tray of meatloaf and a bowl of pudding, a bucket catches another leak, and a sign says repairs have been pending since 1997.</desc>
+          <!-- Ceiling tiles with a water stain and a crack -->
+          <rect x="20" y="20" width="510" height="86" fill="#d3c79f" stroke="#a8996c" stroke-width="3"/>
+          <path d="M122 20v86M224 20v86M326 20v86M428 20v86M20 63h510" stroke="#a8996c" stroke-width="3"/>
+          <path d="M248 40c22-16 66-12 80 6 18 4 22 30 4 40-14 14-62 16-82 2-20-6-24-36-2-48z" fill="#9c7140" opacity=".55"/>
+          <path d="M268 52c14-8 40-6 48 6 8 10-4 24-24 24-18 0-34-14-24-30z" fill="#7a5a32" opacity=".55"/>
+          <path d="M150 30l18 22-6 14 20 18M440 70l-14 12 10 10" fill="none" stroke="#2b261d" stroke-width="3" stroke-linecap="round"/>
+          <path d="M60 74c10-8 26-6 30 4 2 10-14 18-26 12-8-4-10-10-4-16z" fill="#5b6438" opacity=".45"/>
+          <!-- Drips -->
+          <g class="drip-path" fill="#7f9aa0" stroke="#2b261d" stroke-width="2">
+            <path class="drop d1" d="M292 112c-8 12-10 18-10 22a10 10 0 0 0 20 0c0-4-2-10-10-22z"/>
+            <path class="drop d2" d="M292 172c-7 10-9 15-9 19a9 9 0 0 0 18 0c0-4-2-9-9-19z"/>
+            <path class="drop d3" d="M470 116c-7 10-9 15-9 19a9 9 0 0 0 18 0c0-4-2-9-9-19z"/>
           </g>
-          <path d="M142 219c-32-3-40-35-36-49 30-3 54 11 55 36M157 212c-8-27 5-52 29-60 21 32 8 59-29 60M171 220c15-36 46-46 65-38-3 34-29 51-65 38" fill="#5b6438"/>
-          <g transform="rotate(22 355 216)"><ellipse cx="355" cy="216" rx="46" ry="54" fill="#e6dcbc"/><ellipse cx="355" cy="221" rx="23" ry="27" fill="#c8932f"/></g>
-          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#2b261d" stroke-width="10" stroke-linecap="round"/>
-          <path d="M245 228L423 66M264 236L450 87" fill="none" stroke="#5a4330" stroke-width="4" stroke-linecap="round"/>
-          <path d="M114 307c94 48 236 48 327 0" fill="none" stroke="#e6dcbc" stroke-width="4"/>
-          <path d="M245 371c-15-25 12-55 38-39-14 0-19 21-4 30-11 10-25 12-34 9z" fill="#e6dcbc"/>
-          <circle cx="312" cy="345" r="5" fill="#e6dcbc"/>
+          <!-- Sneeze guard, cracked -->
+          <path d="M70 196h330l26 64H44z" fill="#e6dcbc" opacity=".55" stroke="#2b261d" stroke-width="3"/>
+          <path d="M210 200l18 22-10 16 20 18" fill="none" stroke="#2b261d" stroke-width="2"/>
+          <path d="M84 196v74M386 196v74" stroke="#2b261d" stroke-width="5"/>
+          <!-- Counter -->
+          <rect x="40" y="300" width="392" height="22" fill="#2b261d"/>
+          <rect x="52" y="322" width="368" height="98" fill="#86391c"/>
+          <path d="M52 352h368M52 386h368" stroke="#6e2f17" stroke-width="3"/>
+          <path d="M150 330c6 14 2 30 10 44M330 360c10 8 12 22 22 26" fill="none" stroke="#5a2a14" stroke-width="3" stroke-linecap="round"/>
+          <rect x="62" y="420" width="16" height="36" fill="#2b261d"/><rect x="394" y="420" width="16" height="36" fill="#2b261d"/>
+          <!-- Pan of meatloaf -->
+          <rect x="76" y="272" width="160" height="30" rx="4" fill="#a8996c" stroke="#2b261d" stroke-width="3"/>
+          <path d="M96 276c4-26 112-26 120 0z" fill="#6b4226" stroke="#2b261d" stroke-width="3"/>
+          <path d="M120 262l12-8M146 258l12-8M172 258l12-8" stroke="#3d2614" stroke-width="4" stroke-linecap="round"/>
+          <path d="M108 274c18-6 34 2 52-2s30-4 48 0" fill="none" stroke="#86391c" stroke-width="4"/>
+          <!-- Bowl of pudding catching the drip -->
+          <path d="M252 272h86l-10 30h-66z" fill="#a8996c" stroke="#2b261d" stroke-width="3"/>
+          <ellipse cx="295" cy="272" rx="43" ry="10" fill="#5b6438" stroke="#2b261d" stroke-width="3"/>
+          <ellipse class="ripple" cx="292" cy="272" rx="14" ry="4" fill="none" stroke="#e6dcbc" stroke-width="2"/>
+          <!-- Sign -->
+          <path d="M354 300l14-44h52l14 44z" fill="#e6dcbc" stroke="#2b261d" stroke-width="3"/>
+          <text x="394" y="276" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="10" font-weight="bold" fill="#2b261d">REPAIRS</text>
+          <text x="394" y="290" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="9" fill="#2b261d">since 1997</text>
+          <!-- Floor and bucket -->
+          <ellipse cx="270" cy="458" rx="240" ry="12" fill="#a8996c" opacity=".6"/>
+          <path d="M446 386h48l-6 66h-36z" fill="#5b6438" stroke="#2b261d" stroke-width="3"/>
+          <ellipse cx="470" cy="386" rx="24" ry="7" fill="#7f9aa0" stroke="#2b261d" stroke-width="3"/>
+          <path d="M448 392c4-30 40-30 44 0" fill="none" stroke="#2b261d" stroke-width="3"/>
+          <ellipse cx="420" cy="462" rx="28" ry="5" fill="#7f9aa0" opacity=".7"/>
         </svg>
         <figcaption>Refills guaranteed. Repairs are not.</figcaption>
       </figure>
